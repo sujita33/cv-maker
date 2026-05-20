@@ -31,15 +31,13 @@
             <section id="home-section" class="page-section">
                 <div class="welcome-box">
                     <h1>Welcome to Your CV Builder</h1>
-                    <p>Create professional, high-quality CVs in just a few minutes. Stand out from the crowd and land
-                        your dream job.</p>
+                    <p>Create professional, high-quality CVs in just a few minutes. Stand out from the crowd and land your dream job.</p>
                     <button class="btn-primary" id="cta-btn">Choose a Template</button>
                 </div>
             </section>
 
             <section id="templates-section" class="page-section hidden">
-                <button class="btn-back" onclick="showSection(homeSection, homeLink)"><i
-                        class="fa-solid fa-arrow-left"></i> Back to Home</button>
+                <button class="btn-back" onclick="showSection(homeSection, homeLink)"><i class="fa-solid fa-arrow-left"></i> Back to Home</button>
 
                 <div class="section-title">
                     <h2>Select a Template</h2>
@@ -92,8 +90,7 @@
             </section>
 
             <section id="create-cv-section" class="page-section hidden">
-                <button class="btn-back" onclick="showSection(homeSection, homeLink)"><i
-                        class="fa-solid fa-arrow-left"></i> Back to Home</button>
+                <button class="btn-back" onclick="showSection(homeSection, homeLink)"><i class="fa-solid fa-arrow-left"></i> Back to Home</button>
 
                 <div class="cv-card">
                     <div class="card-header">
@@ -104,8 +101,8 @@
                         </div>
                     </div>
 
-<form class="cv-form" id="interactive-cv-form">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+                    <form class="cv-form" id="interactive-cv-form">
+                        <div class="workspace-grid-wrapper">
                             
                             <div class="form-inputs-pane">
                                 <h4 style="margin-bottom: 15px; color: #2c3e50; border-bottom: 2px solid #eaeaea; padding-bottom: 5px;">Personal Details</h4>
@@ -155,32 +152,32 @@
                                 <button type="submit" class="btn-submit" style="width: 100%; margin-top: 20px;">Save & Export CV</button>
                             </div>
 
-                            <div class="preview-paper-pane" style="background: white; border: 1px solid #d3d3d3; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 4px; padding: 40px; min-height: 500px; color: #333; font-family: 'Arial', sans-serif;">
+                            <div class="preview-paper-pane">
                                 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #333; padding-bottom: 15px; margin-bottom: 20px;">
                                     <div>
-                                        <h2 id="view-name" style="margin: 0; font-size: 28px; color: #111; font-weight: bold;">Your Name</h2>
-                                        <p style="margin: 5px 0 0 0; color: #666; font-size: 14px;">
-                                            <span id="view-email">email@example.com</span> | 
+                                        <h2 id="view-name" style="margin: 0; font-size: 28px; color: #111; font-weight: bold; word-break: break-word;">Your Name</h2>
+                                        <p style="margin: 5px 0 0 0; color: #666; font-size: 14px; word-break: break-all;">
+                                            <span id="view-email">email@example.com</span> <br class="responsive-preview-break">| 
                                             <span id="view-phone">Phone Number</span>
                                         </p>
-                                        <p id="view-address" style="margin: 2px 0 0 0; color: #666; font-size: 14px;">Your Location Address</p>
+                                        <p id="view-address" style="margin: 2px 0 0 0; color: #666; font-size: 14px; word-break: break-word;">Your Location Address</p>
                                     </div>
-                                    <img id="view-avatar" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='%23ccc'><circle cx='12' cy='8' r='4'/><path d='M12 14c-6.1 0-8 4-8 4v2h16v-2s-1.9-4-8-4z'/></svg>" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 1px solid #ddd;">
+                                    <img id="view-avatar" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='%23ccc'><circle cx='12' cy='8' r='4'/><path d='M12 14c-6.1 0-8 4-8 4v2h16v-2s-1.9-4-8-4z'/></svg>" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 1px solid #ddd; flex-shrink: 0;">
                                 </div>
 
                                 <div style="margin-bottom: 20px;">
                                     <h4 style="text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 3px; font-size: 16px; color: #2c3e50; margin-bottom: 8px;">Education</h4>
-                                    <p id="view-education" style="margin: 0; font-size: 14px; white-space: pre-wrap; line-height: 1.5;">Educational qualifications show up here...</p>
+                                    <p id="view-education" style="margin: 0; font-size: 14px; white-space: pre-wrap; line-height: 1.5; word-break: break-word;">Educational qualifications show up here...</p>
                                 </div>
 
                                 <div style="margin-bottom: 20px;">
                                     <h4 style="text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 3px; font-size: 16px; color: #2c3e50; margin-bottom: 8px;">Skills</h4>
-                                    <p id="view-skills" style="margin: 0; font-size: 14px; white-space: pre-wrap; line-height: 1.5;">Core skillsets show up here...</p>
+                                    <p id="view-skills" style="margin: 0; font-size: 14px; white-space: pre-wrap; line-height: 1.5; word-break: break-word;">Core skillsets show up here...</p>
                                 </div>
 
                                 <div style="margin-bottom: 20px;">
                                     <h4 style="text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 3px; font-size: 16px; color: #2c3e50; margin-bottom: 8px;">Work Experience</h4>
-                                    <p id="view-experience" style="margin: 0; font-size: 14px; white-space: pre-wrap; line-height: 1.5;">Detailed job histories show up here...</p>
+                                    <p id="view-experience" style="margin: 0; font-size: 14px; white-space: pre-wrap; line-height: 1.5; word-break: break-word;">Detailed job histories show up here...</p>
                                 </div>
                             </div>
 
@@ -191,26 +188,22 @@
 
         </main>
     </div>
-   <footer style="background-color: #1a1a1a; color: #ffffff; padding: 25px 0; font-family: sans-serif; font-size: 14px; border-top: 2px solid #2d2d2d; margin-top: 40px; width: 100%;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-            
-            <p style="margin: 0; color: #aaaaaa;">&copy; 2026 CV Maker. All rights reserved.</p>
-            
-            <div style="display: flex; gap: 20px;">
-                <a href="#" onclick="showSection(homeSection, homeLink)" style="color: #ffffff; text-decoration: none; transition: 0.2s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#ffffff'">Home</a>
-                <a href="#" onclick="showSection(templatesSection, templatesLink)" style="color: #ffffff; text-decoration: none; transition: 0.2s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#ffffff'">Templates</a>
-                <a href="#" onclick="showSection(createCvSection, createCvLink)" style="color: #ffffff; text-decoration: none; transition: 0.2s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#ffffff'">Create CV</a>
+    <footer class="dashboard-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 CV Maker. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" onclick="showSection(homeSection, homeLink)">Home</a>
+                <a href="#" onclick="showSection(templatesSection, templatesLink)">Templates</a>
+                <a href="#" onclick="showSection(createCvSection, createCvLink)">Create CV</a>
             </div>
-            
-            <div style="display: flex; gap: 15px; font-size: 18px;">
-                <a href="https://github.com/sujita33/cv-maker" target="_blank" title="GitHub" style="color: #aaaaaa; text-decoration: none;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#aaaaaa'">
+            <div class="footer-socials">
+                <a href="https://github.com/sujita33/cv-maker" target="_blank" title="GitHub">
                     <i class="fa-brands fa-github"></i>
                 </a>
-                <a href="#" title="Support" style="color: #aaaaaa; text-decoration: none;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#aaaaaa'">
+                <a href="#" title="Support">
                     <i class="fa-solid fa-circle-question"></i>
                 </a>
             </div>
-
         </div>
     </footer>
 
@@ -224,6 +217,7 @@
         const templatesSection = document.getElementById('templates-section');
         const createCvSection = document.getElementById('create-cv-section');
         const templateBadge = document.getElementById('selected-template-badge');
+        const cvForm = document.getElementById('interactive-cv-form');
 
         function clearActiveLinks() {
             homeLink.classList.remove('active');
@@ -256,6 +250,21 @@
         createCvLink.addEventListener('click', (e) => { e.preventDefault(); showSection(createCvSection, createCvLink); });
         ctaBtn.addEventListener('click', () => showSection(templatesSection, templatesLink));
 
+        // Form Submit interception logic wrapper
+        cvForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Success! Your tracking template metrics and details were logged to the active session workspace memory.");
+        });
+
+        // Inter-page Cross-communication state processing hook
+        document.addEventListener("DOMContentLoaded", () => {
+            const externalSelection = localStorage.getItem('selectTemplate');
+            if(externalSelection) {
+                localStorage.removeItem('selectTemplate');
+                selectTemplate(externalSelection);
+            }
+        });
+
         // Live Preview Binding Logic
         function updateLivePreview() {
             const nameInput = document.getElementById('full-name').value;
@@ -286,7 +295,6 @@
                 reader.readAsDataURL(event.target.files[0]);
             }
         }
-
     </script>
 </body>
 

@@ -468,3 +468,44 @@ body {
         margin: 0 10px;
     }
 }
+
+/* Custom Responsive Grid Workspace Panels */
+.workspace-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.preview-paper-pane {
+    background: white;
+    border: 1px solid #d3d3d3;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    padding: 40px;
+    min-height: 500px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.responsive-preview-break {
+    display: none;
+}
+
+/* Tablet & Mobile Media Processing Override Layouts */
+@media (max-width: 992px) {
+    .workspace-grid-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .preview-paper-pane {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-preview-break {
+        display: block;
+    }
+}
