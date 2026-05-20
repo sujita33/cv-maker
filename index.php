@@ -191,7 +191,7 @@
 
         </main>
     </div>
-    <footer style="background-color: #1a1a1a; color: #ffffff; padding: 25px 0; font-family: sans-serif; font-size: 14px; border-top: 2px solid #2d2d2d; margin-top: 40px; width: 100%;">
+   <footer style="background-color: #1a1a1a; color: #ffffff; padding: 25px 0; font-family: sans-serif; font-size: 14px; border-top: 2px solid #2d2d2d; margin-top: 40px; width: 100%;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
             
             <p style="margin: 0; color: #aaaaaa;">&copy; 2026 CV Maker. All rights reserved.</p>
