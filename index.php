@@ -7,6 +7,72 @@
     <title>CV Maker Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS patches ensuring side-by-side presentation metrics render smoothly */
+        .workspace-grid-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            align-items: flex-start;
+            margin-top: 15px;
+        }
+
+        .form-inputs-pane {
+            flex: 1;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .preview-paper-pane {
+            flex: 1;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 20px;
+            min-height: 600px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group.full-width {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            font-size: 14px;
+            color: #34495e;
+        }
+
+        .form-group input, .form-group textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        /* Responsive breakdown wrapper for small mobile screens */
+        @media (max-width: 992px) {
+            .workspace-grid-wrapper {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -149,15 +215,15 @@
                                     <textarea id="experience" rows="4" placeholder="Frontend Developer Intern at Company Y: Built responsive templates..." oninput="updateLivePreview()"></textarea>
                                 </div>
 
-                                <button type="submit" class="btn-submit" style="width: 100%; margin-top: 20px;">Save & Export CV</button>
+                                <button type="submit" class="btn-submit" style="width: 100%; margin-top: 20px; background-color: #198754; color: white; border: none; padding: 12px; font-weight: bold; border-radius: 4px; cursor: pointer;">Save & Export CV</button>
                             </div>
 
                             <div class="preview-paper-pane">
                                 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #333; padding-bottom: 15px; margin-bottom: 20px;">
                                     <div>
                                         <h2 id="view-name" style="margin: 0; font-size: 28px; color: #111; font-weight: bold; word-break: break-word;">Your Name</h2>
-                                        <p style="margin: 5px 0 0 0; color: #666; font-size: 14px; word-break: break-all;">
-                                            <span id="view-email">email@example.com</span> <br class="responsive-preview-break">| 
+                                        <p style="margin: 5px 0 0 0; color: #666; font-size: 14px; line-height: 1.4;">
+                                            <span id="view-email">email@example.com</span> <br>
                                             <span id="view-phone">Phone Number</span>
                                         </p>
                                         <p id="view-address" style="margin: 2px 0 0 0; color: #666; font-size: 14px; word-break: break-word;">Your Location Address</p>
@@ -166,18 +232,18 @@
                                 </div>
 
                                 <div style="margin-bottom: 20px;">
-                                    <h4 style="text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 3px; font-size: 16px; color: #2c3e50; margin-bottom: 8px;">Education</h4>
-                                    <p id="view-education" style="margin: 0; font-size: 14px; white-space: pre-wrap; line-height: 1.5; word-break: break-word;">Educational qualifications show up here...</p>
+                                    <h4 style="text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 3px; font-size: 14px; color: #1a446c; font-weight: bold; margin-bottom: 8px;">Education</h4>
+                                    <p id="view-education" style="margin: 0; font-size: 14px; white-space: pre-wrap; line-height: 1.5; color: #555;">Educational qualifications show up here...</p>
                                 </div>
 
                                 <div style="margin-bottom: 20px;">
-                                    <h4 style="text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 3px; font-size: 16px; color: #2c3e50; margin-bottom: 8px;">Skills</h4>
-                                    <p id="view-skills" style="margin: 0; font-size: 14px; white-space: pre-wrap; line-height: 1.5; word-break: break-word;">Core skillsets show up here...</p>
+                                    <h4 style="text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 3px; font-size: 14px; color: #1a446c; font-weight: bold; margin-bottom: 8px;">Skills</h4>
+                                    <p id="view-skills" style="margin: 0; font-size: 14px; white-space: pre-wrap; line-height: 1.5; color: #555;">Core skillsets show up here...</p>
                                 </div>
 
                                 <div style="margin-bottom: 20px;">
-                                    <h4 style="text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 3px; font-size: 16px; color: #2c3e50; margin-bottom: 8px;">Work Experience</h4>
-                                    <p id="view-experience" style="margin: 0; font-size: 14px; white-space: pre-wrap; line-height: 1.5; word-break: break-word;">Detailed job histories show up here...</p>
+                                    <h4 style="text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 3px; font-size: 14px; color: #1a446c; font-weight: bold; margin-bottom: 8px;">Work Experience</h4>
+                                    <p id="view-experience" style="margin: 0; font-size: 14px; white-space: pre-wrap; line-height: 1.5; color: #555;">Detailed job histories show up here...</p>
                                 </div>
                             </div>
 
@@ -188,6 +254,7 @@
 
         </main>
     </div>
+
     <footer class="dashboard-footer">
         <div class="footer-container">
             <p>&copy; 2026 CV Maker. All rights reserved.</p>
@@ -244,19 +311,19 @@
             showSection(createCvSection, createCvLink);
         }
 
-        // Navigation Bindings
+        // Navigation Tab Bindings
         homeLink.addEventListener('click', (e) => { e.preventDefault(); showSection(homeSection, homeLink); });
         templatesLink.addEventListener('click', (e) => { e.preventDefault(); showSection(templatesSection, templatesLink); });
         createCvLink.addEventListener('click', (e) => { e.preventDefault(); showSection(createCvSection, createCvLink); });
         ctaBtn.addEventListener('click', () => showSection(templatesSection, templatesLink));
 
-        // Form Submit interception logic wrapper
+        // Form Submission Intercept Handler
         cvForm.addEventListener('submit', (e) => {
             e.preventDefault();
             alert("Success! Your tracking template metrics and details were logged to the active session workspace memory.");
         });
 
-        // Inter-page Cross-communication state processing hook
+        // Local Storage Cross-Communication logic
         document.addEventListener("DOMContentLoaded", () => {
             const externalSelection = localStorage.getItem('selectTemplate');
             if(externalSelection) {
@@ -265,7 +332,7 @@
             }
         });
 
-        // Live Preview Binding Logic
+        // Dynamic Text Sync Update Hooks
         function updateLivePreview() {
             const nameInput = document.getElementById('full-name').value;
             const emailInput = document.getElementById('email').value;
@@ -284,7 +351,7 @@
             document.getElementById('view-experience').innerText = expInput ? expInput : "Detailed job histories show up here...";
         }
 
-        // Image Stream Renderer
+        // Real-time Upload Image Reader
         function previewImage(event) {
             const reader = new FileReader();
             reader.onload = function() {
